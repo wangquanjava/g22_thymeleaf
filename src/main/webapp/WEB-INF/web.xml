@@ -47,6 +47,11 @@
 			<param-name>encoding</param-name>
 			<param-value>UTF-8</param-value>
 		</init-param>
+	    <!--是否忽略代码中的request(response).getCharacterEncoding()。默认是false，只有没有值的情况才设值-->
+		<init-param> 
+		    <param-name>forceEncoding</param-name>  
+		    <param-value>true</param-value>  
+		</init-param>
 	</filter>
 	<filter-mapping>
 		<filter-name>characterEncodingFilter</filter-name>
