@@ -1,5 +1,5 @@
 package com.git.domain;
 
-public class EntityDemo {
+public class DemoEntity {
 
 }
