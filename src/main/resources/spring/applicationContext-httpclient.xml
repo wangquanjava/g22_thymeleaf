@@ -30,9 +30,11 @@
 	<bean id="httpClientBuilder" class="org.apache.http.impl.client.HttpClientBuilder">
 		<property name="connectionManager" ref="httpClientConnectionManager" />
 	</bean>
+	
 	<!-- 3.配置CloseableHttpClient是多例的 -->
 	<bean id="httpClient" class="org.apache.http.impl.client.CloseableHttpClient" factory-bean="httpClientBuilder" factory-method="build" scope="prototype">
 	</bean>
+	
 	<!-- 4.配置Config的Builder -->
 	<bean id="builder" class="org.apache.http.client.config.RequestConfig.Builder">
 		<!-- 创建连接的最长时间 -->
@@ -44,8 +46,10 @@
 		<!-- 提交请求前测试连接是否可用 -->
 		<property name="staleConnectionCheckEnabled" value="true" />
 	</bean>
+	
 	<!-- 5.创建配置对象 -->
 	<bean class="org.apache.http.client.config.RequestConfig" factory-bean="builder" factory-method="build" />
+	
 	<!-- 6.清理无效连接 -->
     <bean class="com.git.evictor.IdleConnectionEvictor" destroy-method="shutdown" init-method="start" />
 </beans>
