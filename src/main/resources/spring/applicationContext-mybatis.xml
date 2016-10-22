@@ -14,11 +14,13 @@
        					   http://www.springframework.org/schema/context/spring-context.xsd">
 	<!-- 扫描@Repository注解 -->
 	<context:component-scan base-package="com.git.mapper" />
+	
 	<!-- 只能扫描继承通用Mapper的接口 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.git.mapper" />
 	</bean>
-<!-- 加载配置文件-->
+	
+	<!-- 加载配置文件-->
 	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<!-- 允许JVM参数覆盖 -->
@@ -63,7 +65,8 @@
 		<!-- 配置别名扫描包 -->
 		<property name="typeAliasesPackage" value="com.git.domain" />
 	</bean>
-<!-- 	事务相关 -->
+
+	<!-- 事务相关 -->
 	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
@@ -82,6 +85,7 @@
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 	  <constructor-arg index="0" ref="sqlSessionFactory" />
 	</bean>
+
 	<!--注册sqlMapper-->	
 	<bean id="sqlMapper" class="com.github.abel533.sql.SqlMapper" scope="prototype">
 	  <constructor-arg ref="sqlSession"/>
