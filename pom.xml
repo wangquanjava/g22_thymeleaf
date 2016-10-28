@@ -195,10 +195,19 @@
 		
 		<!-- 文件过滤 -->
 		<resources>
+			<!-- 加载所有文件 -->
 			<resource>
 				<directory>src/main/resources</directory>
 				<includes>
-					<include>jdbc.properties</include>
+					<include>**/*</include>
+				</includes>
+				<filtering>false</filtering>
+			</resource>
+			<!-- 指明需要替换的文件 -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>jdbc.properteis</include>
 				</includes>
 				<!--填充${}字符-->
 				<filtering>true</filtering>
