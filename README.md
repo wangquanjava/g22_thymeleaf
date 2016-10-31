@@ -3,7 +3,7 @@
 2. 修改web.xml中<display-name>、<servlet-name>
 3. 修改org.eclipse.wst.common.component中的项目名
 3. jdbc.properties中数据库用户信息
-4. 如果不需要httpclent，删除com.git.evictor、applicationContext-httpclient.xml、com.git.domain.HttpResult、com.git.service.impl.ApiService即可
-5. 配置了一个默认的拦截器，没做任何处理，允许通过了com.git.intercepor.DemoInteceptor，springmvc.xml
-6. c3p0连接池
-7. 添加listener，用于监测服务器启动和关闭，web.xml\com.git.listener.ContextListener
+4. 配置了一个默认的拦截器，没做任何处理，允许通过了com.git.intercepor.DemoInteceptor，springmvc.xml
+5. 采用c3p0连接池
+6. 添加listener，用于监测服务器启动和关闭，web.xml\com.git.listener.ContextListener
+7. 配置pom.xml，支持服务器和本地开发的不用配置jdbc.properties、jdbc_product.properties、jdbc_development.properties
