@@ -1,5 +1,5 @@
 package com.git.controller;
 
-public class ControllerDemo {
+public class DemoController {
 
 }
