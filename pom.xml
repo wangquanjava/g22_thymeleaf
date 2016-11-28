@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.git</groupId>
-	<artifactId>g05_ssm_template</artifactId>
+	<artifactId>g22_thymeleaf</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
@@ -175,6 +175,18 @@
 			<version>2.7</version>
 		</dependency>
 		
+		<!-- thymeleaf相关 -->
+		<dependency>
+		    <groupId>org.thymeleaf</groupId>
+		    <artifactId>thymeleaf</artifactId>
+		    <version>2.1.4.RELEASE</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.thymeleaf</groupId>
+		    <artifactId>thymeleaf-spring4</artifactId>
+		    <version>2.1.4.RELEASE</version>
+		</dependency>
+		
 		
 	</dependencies>
 
@@ -200,7 +212,7 @@
 				<configuration>
 					<!--端口和虚拟目录 -->
 					<port>80</port>
-					<path>/</path>
+					<path>/g22_thymeleaf</path>
 				</configuration>
 			</plugin>
 		</plugins>
